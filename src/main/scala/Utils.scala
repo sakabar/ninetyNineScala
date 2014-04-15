@@ -46,6 +46,21 @@ object Utils{
     }
   }
 
+  private def compress2(lst :List[Any], looking :Any): List[Any] = {
+    if (lst.isEmpty){
+      Nil
+    }
+    else{
+      if (lst.head == looking){
+	compress2(lst.tail, looking)
+      }
+      else{
+	lst.head :: compress2(lst.tail, lst.head)
+      }
+    }
+  }
+
+  def compress(lst :List[Any]): List[Any] = lst.head :: compress2(lst, lst.head)
 
 
 }
