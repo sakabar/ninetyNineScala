@@ -31,4 +31,11 @@ object Utils{
       return reverse(lst.tail) ::: List(lst.head)
     }
   }
+
+  def isPalindrome(lst: List[Int]): Boolean = lst == lst.reverse
+
+
+
+
+
 }
