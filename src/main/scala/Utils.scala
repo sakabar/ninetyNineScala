@@ -14,4 +14,14 @@ object Utils{
     }
   }
 
+  def length(lst: List[Int]): Int = {
+    if (lst.isEmpty){
+      return 0
+    }
+    else{
+      return length(lst.tail) + 1
+    }
+    
+  }
+
 }
