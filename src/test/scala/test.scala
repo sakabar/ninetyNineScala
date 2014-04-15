@@ -70,8 +70,17 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P09-1"){
+    val expected = List(List('a, 'a, 'a, 'a), List('b), List('c, 'c), List('a, 'a), List('d), List('e, 'e, 'e, 'e))
+    val actual = Utils.pack(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+    assert(expected === actual)
+  }
 
-
+  test("P09-2"){
+    val expected = List(List('a), List('b))
+    val actual = Utils.pack(List('a, 'b))
+    assert(expected === actual)
+  }
 
 
 

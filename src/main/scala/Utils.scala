@@ -62,5 +62,19 @@ object Utils{
 
   def compress(lst :List[Any]): List[Any] = lst.head :: compress2(lst, lst.head)
 
-
+  def pack2(lst :List[Symbol], looking :Symbol, ans :List[Symbol]) :List[List[Symbol]] = {
+    if(lst.isEmpty){
+      return List(ans)
+    }
+    else{
+      if (lst.head == looking){
+	pack2(lst.tail, looking, looking :: ans)
+      }
+      else{
+	ans :: pack2(lst.tail, lst.head, List(lst.head))
+      }
+    }
+  }
+  
+  def pack(lst :List[Symbol]) :List[List[Symbol]] = pack2(lst.tail, lst.head, List(lst.head))
 }
