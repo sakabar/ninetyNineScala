@@ -40,6 +40,31 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P07-1"){
+    val expected = List(1,1,2,3,5,8)
+    val actual = Utils.flatten(List(List(1,1,2), 3, List(5,8)))
+    assert(expected === actual)
+  }
+
+  test("P07-2"){
+    val expected = List()
+    val actual = Utils.flatten(List())
+    assert(expected === actual)
+  }
+
+  test("P07-3"){
+    val expected = List(1,2)
+    val actual = Utils.flatten(List(1,2))
+    assert(expected === actual)
+  }
+
+  test("P07-4"){
+    val expected = List(1,2,3)
+    val actual = Utils.flatten(List(1,List(2,3)))
+    assert(expected === actual)
+  }
+
+
 
 
 }
