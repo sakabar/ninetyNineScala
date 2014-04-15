@@ -88,6 +88,12 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P11-1"){
+    val expected = List((4,'a), 'b, (2,'c), (2,'a), 'd, (4,'e))
+    val actual = Utils.encodeModified(List('a, 'a, 'a, 'a, 'b, 'c, 'c, 'a, 'a, 'd, 'e, 'e, 'e, 'e))
+    assert(expected === actual)
+  }
+
 
 
 }

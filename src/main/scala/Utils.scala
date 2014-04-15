@@ -80,4 +80,13 @@ object Utils{
 
   def encode(lst :List[Symbol]) = pack(lst).map(l => (l.length, l.head))
 
+private def tmp(p :(Int, Symbol)) = {
+if (p._1 == 1){
+p._2
+}
+else{
+p
+}
+}
+  def encodeModified(lst :List[Symbol]) = encode(lst).map(p => tmp(p))
 }
