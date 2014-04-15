@@ -28,5 +28,12 @@ class SetSuite extends FunSuite {
   }
 
 
+  test("P05"){
+    val expected = List(8,5,3,2,1,1)
+    val actual = Utils.reverse(List(1,1,2,3,5,8))
+    assert(expected === actual)
+  }
+
+
 
 }

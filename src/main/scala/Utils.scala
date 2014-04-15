@@ -21,7 +21,14 @@ object Utils{
     else{
       return length(lst.tail) + 1
     }
-    
   }
 
+  def reverse(lst: List[Int]): List[Int] = {
+    if (lst.isEmpty){
+      return Nil
+    }
+    else{
+      return reverse(lst.tail) ::: List(lst.head)
+    }
+  }
 }
