@@ -77,4 +77,7 @@ object Utils{
   }
   
   def pack(lst :List[Symbol]) :List[List[Symbol]] = pack2(lst.tail, lst.head, List(lst.head))
+
+  def encode(lst :List[Symbol]) = pack(lst).map(l => (l.length, l.head))
+
 }
