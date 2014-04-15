@@ -34,6 +34,12 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P06"){
+    val expected = true
+    val actual = Utils.isPalindrome(List(1,2,3,2,1))
+    assert(expected === actual)
+  }
+
 
 
 }
