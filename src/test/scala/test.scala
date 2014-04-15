@@ -9,5 +9,11 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P02"){
+    val expected : Int = 5
+    val actual : Int = Utils.penultimate(List(1,1,2,3,5,8))
+    assert(expected === actual)
+  }
+
 
 }
