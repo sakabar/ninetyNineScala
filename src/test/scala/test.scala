@@ -15,5 +15,12 @@ class SetSuite extends FunSuite {
     assert(expected === actual)
   }
 
+  test("P03"){
+    val expected : Int = 2
+    val actual : Int = Utils.nth(2, List(1,1,2,3,5,8))
+    assert(expected === actual)
+  }
+
+
 
 }
