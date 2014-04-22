@@ -80,13 +80,34 @@ object Utils{
 
   def encode(lst :List[Symbol]) = pack(lst).map(l => (l.length, l.head))
 
-private def tmp(p :(Int, Symbol)) = {
-if (p._1 == 1){
-p._2
-}
-else{
-p
-}
-}
+  private def tmp(p :(Int, Symbol)) = {
+    if (p._1 == 1){
+      p._2
+    }
+    else{
+      p
+    }
+  }
+
   def encodeModified(lst :List[Symbol]) = encode(lst).map(p => tmp(p))
+
+  private def hoge(s:Symbol, n:Int) : List[Symbol] = {
+    if(n==0){
+      return List()
+    }
+    else{
+      return s :: hoge(s, n-1)
+    }
+  }
+
+  def decode(lst :List[(Int, Symbol)]) : List[Symbol] = {
+    if(lst.length == 0){
+      return List()
+    }
+    else{
+      val p = lst.head
+      return hoge(p._2, p._1) ::: decode(lst.tail)
+    }
+  }
+
 }
